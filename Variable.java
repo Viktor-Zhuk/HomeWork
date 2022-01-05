@@ -7,6 +7,6 @@ public class Variable {
         float f = 3.144F;
         double d = 10.005;
         char ch = 'a';
-        boolean boo = true;
+        boolean bo = true;
     }
 }
