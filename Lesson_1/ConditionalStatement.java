@@ -1,5 +1,7 @@
 public class ConditionalStatement {
+    
     public static void main(String[] args) {
+        
         int age = 33; //Возраст
         double height = 1.92; //Рост
         boolean isMan = true; //Пол
