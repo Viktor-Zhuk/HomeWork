@@ -1,5 +1,7 @@
 public class Variable {
+    
     public static void main(String[] args) {
+        
         byte b = 10;
         short s = 500;
         int i = 1000;
@@ -8,5 +10,6 @@ public class Variable {
         double d = 10.005;
         char ch = 'a';
         boolean boo = true;
+        
     }
 }
