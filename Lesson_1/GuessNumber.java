@@ -4,16 +4,16 @@ public class GuessNumber {
     
     public static void main(String[] args) {
         Random random = new Random();
-        int randomNumber = random.nextInt(100);
-        int exampleNumber = 50;
+        int randomNumber = random.nextInt(100) + 1;
+        int playerNumber = 50;
         double helper = 50;
-        while (exampleNumber != randomNumber) {
+        while (playerNumber != randomNumber) {
             helper = Math.ceil(helper / 2);
-            if (exampleNumber > randomNumber) {
-                exampleNumber -= (int)helper;
+            if (playereNumber > randomNumber) {
+                playerNumber -= (int) helper;
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else {
-                exampleNumber += (int)helper;
+                exampleNumber += (int) helper;
                 System.out.println("Данное число меньше того, что загадал компьютер");
             }
         }
