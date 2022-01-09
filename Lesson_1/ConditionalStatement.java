@@ -1,10 +1,10 @@
 public class ConditionalStatement {
     
     public static void main(String[] args) {
-        int age = 33; //Возраст
-        double height = 1.92; //Рост
-        boolean isMan = true; //Пол
-        char  firstLetterName = 'V'; //Первая буква имени
+        int age = 33;
+        double height = 1.92;
+        boolean isMan = true;
+        char  firstLetterName = 'V';
         if (age > 20) {
             System.out.println("Ваш возраст: " + age);
         }
