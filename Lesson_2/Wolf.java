@@ -22,7 +22,7 @@ public class Wolf {
         System.out.println("Воет");
     }
 
-    public void  hunt() {
+    public void hunt() {
         System.out.println("Охотится");
     }
 
