@@ -1,11 +1,6 @@
 public class Calculator {
     
-    private int firstNumber;
-    private int secondNumber;
-    
     public void calculate(int firstNumber, int secondNumber, char mathOperation) {
-        this.firstNumber = firstNumber;
-        this.secondNumber = secondNumber;
         int result = 1;
         switch(mathOperation) {
             case '+': result = firstNumber + secondNumber;
