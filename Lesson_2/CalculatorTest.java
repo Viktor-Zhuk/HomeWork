@@ -24,8 +24,8 @@ public class CalculatorTest {
             if (answer.equals("no")) {
                 break;
             } else if (!answer.equals("yes") && !answer.equals("no")) {
-               System.out.println("Введите корректный ответ.");
-               helper = false; 
+                System.out.println("Введите корректный ответ.");
+                helper = false; 
             } else {
                 helper = true;
             }

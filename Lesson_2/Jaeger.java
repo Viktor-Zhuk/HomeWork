@@ -7,6 +7,7 @@ public class Jaeger {
     private String body;
     private String pilotOne;
     private String pilotTwo;
+    private int kaijuKilled = 0;
 
     public String getModelName() {
         return modelName;
@@ -19,7 +20,7 @@ public class Jaeger {
             this.modelName = modelName;
         }
     }
-//=======================================================
+
     public String getMark() {
         return mark;
     }
@@ -27,7 +28,7 @@ public class Jaeger {
     public void setMark(String mark) {
         this.mark = mark;
     }
-//=======================================================
+
     public float getHeight() {
         return height;
     }
@@ -35,7 +36,7 @@ public class Jaeger {
     public void setHeight(float height) {
         this.height = height;
     }
-//=======================================================
+
     public float getWeight() {
         return weight;
     }
@@ -43,7 +44,7 @@ public class Jaeger {
     public void setWeight(float weight) {
         this.weight = weight;
     }
-//=======================================================
+
     public String getBody() {
         return body;
     }
@@ -51,7 +52,7 @@ public class Jaeger {
     public void setBody(String body) {
         this.body = body;
     }
-//=======================================================
+
     public String getPilotOne() {
         return pilotOne;
     }
@@ -59,7 +60,7 @@ public class Jaeger {
     public void setPilotOne(String pilotOne) {
         this.pilotOne = pilotOne;
     }
-//=======================================================
+
     public String getPilotTwo() {
         return pilotTwo;
     }
@@ -67,7 +68,6 @@ public class Jaeger {
     public void setPilotTwo(String pilotTwo) {
         this.pilotTwo = pilotTwo;
     }
-//=======================================================
 
     public void attack() {
         System.out.println(modelName + " атаковал Kaiju");
@@ -81,13 +81,16 @@ public class Jaeger {
         System.out.println(modelName + " запрашивает помощь");
     }
 
-    private int kaijuKilled = 0;
     public void killKaiju() {
         kaijuKilled++;
         System.out.println(modelName + " уничтожил одного Kaiju");
     }
 
-    public String getInformation() {
-        return "Модель " + modelName + " марки " + mark + "\n" + "Высота: " + height + "\n" + "Вес: " + weight + "\n" + "Конструкция тела : " + body + "\n" + "Первый пилот: " + pilotOne + "\n" + "Второй пилот: " + pilotTwo + "\n" + "Уничтожил Kaiju: " + kaijuKilled;
+    @Override
+    public String toString() {
+        return "Модель: " +  modelName + "\nМарка: " + mark +
+            "\nВысота: " + height + "\nВес: " + weight + 
+            "\nКонструкция тела: " + body + "\nПервый пилот: " + pilotOne +
+            "\nВторой пилот: " + pilotTwo +"\nУничтожил Kaiju: " + kaijuKilled;
     }
 } 

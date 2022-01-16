@@ -29,7 +29,7 @@ public class JaegerTest {
         jaegerTwo.killKaiju();
         jaegerOne.killKaiju();
 
-        System.out.println(jaegerOne.getInformation());
-        System.out.println(jaegerTwo.getInformation());            
+        System.out.println(jaegerOne);
+        System.out.println(jaegerTwo);            
     }
 }
