@@ -1,28 +1,93 @@
 public class Jaeger {
 
-    private String modelName = "Bracer Phoenix";
-    private String mark = "Mark-5";
-    private String origin = "USA";
-    private float height = 70.7f;
-    private float 2.1f;
-    private int speed = 3;
-    private int strength = 8;
-    private int armor = 9;
+    private String modelName;
+    private String mark;
+    private float height;
+    private float weight;
+    private String body;
+    private String pilotOne;
+    private String pilotTwo;
 
-    public String getModelName(String modelName) {
+    public String getModelName() {
         return modelName;
     }
 
-    void setModelName(String modelName) {
+    public void setModelName(String modelName) {
         if (modelName == "") {
             System.out.println("Пустая строка");
         } else {
             this.modelName = modelName;
         }
     }
-
-    public boolean drift() {
-        System.out.println("Вы вошли в дрифт");
-        return true;
+//=======================================================
+    public String getMark() {
+        return mark;
     }
-}
+
+    public void setMark(String mark) {
+        this.mark = mark;
+    }
+//=======================================================
+    public float getHeight() {
+        return height;
+    }
+
+    public void setHeight(float height) {
+        this.height = height;
+    }
+//=======================================================
+    public float getWeight() {
+        return weight;
+    }
+
+    public void setWeight(float weight) {
+        this.weight = weight;
+    }
+//=======================================================
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+//=======================================================
+    public String getPilotOne() {
+        return pilotOne;
+    }
+
+    public void setPilotOne(String pilotOne) {
+        this.pilotOne = pilotOne;
+    }
+//=======================================================
+    public String getPilotTwo() {
+        return pilotTwo;
+    }
+
+    public void setPilotTwo(String pilotTwo) {
+        this.pilotTwo = pilotTwo;
+    }
+//=======================================================
+
+    public void attack() {
+        System.out.println(modelName + " атаковал Kaiju");
+    }
+
+    public void move(int steps) {
+        System.out.println(modelName + " прошел " + steps + " шагов");
+    }
+
+    public void requestHelp() {
+        System.out.println(modelName + " запрашивает помощь");
+    }
+
+    private int kaijuKilled = 0;
+    public void killKaiju() {
+        kaijuKilled++;
+        System.out.println(modelName + " уничтожил одного Kaiju");
+    }
+
+    public String getInformation() {
+        return "Модель " + modelName + " марки " + mark + "\n" + "Высота: " + height + "\n" + "Вес: " + weight + "\n" + "Конструкция тела : " + body + "\n" + "Первый пилот: " + pilotOne + "\n" + "Второй пилот: " + pilotTwo + "\n" + "Уничтожил Kaiju: " + kaijuKilled;
+    }
+} 
