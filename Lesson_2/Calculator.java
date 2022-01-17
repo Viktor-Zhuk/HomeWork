@@ -1,7 +1,7 @@
 public class Calculator {
 
     public void calculate(int firstNumber, int secondNumber, char mathOperation) { 
-        int result = 1;   
+        int result = 0;   
         switch(mathOperation) {
             case '+': 
                 result = firstNumber + secondNumber;
@@ -15,7 +15,8 @@ public class Calculator {
             case '/': 
                 result = firstNumber / secondNumber;
                 break;
-            case '^':             
+            case '^':
+                result = 1;             
                 for (int i = 1; i <= secondNumber; i++) {
                     result *= firstNumber;
                 }

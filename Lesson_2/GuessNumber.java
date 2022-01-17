@@ -1,20 +1,20 @@
 import java.util.Scanner;
+import java.util.Random;
 
 public class GuessNumber {
 
-    private String playerOne;
-    private String playerTwo;
-    private int number;
+    private Player playerOne;
+    private Player playerTwo;
 
-    public GuessNumber(String playerOne, String playerTwo, int number) {
+    public GuessNumber(Player playerOne, Player playerTwo) {
         this.playerOne = playerOne;
         this.playerTwo = playerTwo;
-        this.number = number;
-    }
+    }  
 
-    Scanner sc = new Scanner(System.in);
-
-    public void beginPlay() {
+    public void start() {
+        Scanner sc = new Scanner(System.in);
+        Random random = new Random();
+        int number = random.nextInt(100) + 1;
         while (true) {
             System.out.print(playerOne + " ваш вариант ответа: ");
             int answer = sc.nextInt();
