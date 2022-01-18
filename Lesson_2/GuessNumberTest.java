@@ -10,7 +10,7 @@ public class GuessNumberTest {
         Player playerTwo = new Player(sc.nextLine());
 
         String answer = "yes";
-        while (answer.equals("yes") || !answer.equals("no")) { 
+        while (!answer.equals("no")) { 
             if (answer.equals("yes")) {           
                 GuessNumber game = new GuessNumber(playerOne, playerTwo);
                 game.start();
