@@ -6,7 +6,7 @@ public class CalculatorTest {
         Scanner sc = new Scanner(System.in);
         
         String answer = "yes";
-        while (answer.equals("yes") || !answer.equals("no")) {
+        while (!answer.equals("no")) {
             if (answer.equals("yes")) {
                 System.out.println("Введите первое число:");
                 int firstNumber = sc.nextInt();
