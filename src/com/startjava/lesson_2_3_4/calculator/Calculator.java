@@ -1,4 +1,4 @@
-package com.startjava.lesson_2_3.calculator;
+package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
@@ -18,10 +18,7 @@ public class Calculator {
                 result = firstNumber / secondNumber;
                 break;
             case '^':
-                result = 1;             
-                for (int i = 1; i <= secondNumber; i++) {
-                    result *= firstNumber;
-                }
+                result = (int) Math.pow(firstNumber, secondNumber);
                 break;
             case '%': 
                 result = firstNumber % secondNumber;

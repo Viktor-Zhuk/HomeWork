@@ -11,11 +11,11 @@ public class GuessNumber {
         double helper = 50;
         while (playerNumber != randomNumber) {
             helper = Math.ceil(helper / 2);
-            if (playereNumber > randomNumber) {
+            if (playerNumber > randomNumber) {
                 playerNumber -= (int) helper;
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else {
-                exampleNumber += (int) helper;
+                playerNumber += (int) helper;
                 System.out.println("Данное число меньше того, что загадал компьютер");
             }
         }
