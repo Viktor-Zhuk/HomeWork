@@ -2,8 +2,9 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    public void calculate(int firstNumber, int secondNumber, char mathOperation) { 
-        int result = 0;   
+    private int result;
+
+    public int calculate(int firstNumber, int secondNumber, char mathOperation) {
         switch(mathOperation) {
             case '+': 
                 result = firstNumber + secondNumber;
@@ -24,6 +25,6 @@ public class Calculator {
                 result = firstNumber % secondNumber;
                 break;
         }
-        System.out.println("Результат вычисления равен: " + result);
+        return result;
     }
 }

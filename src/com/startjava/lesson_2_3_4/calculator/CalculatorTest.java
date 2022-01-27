@@ -15,10 +15,10 @@ public class CalculatorTest {
                 String[] mathElemets = mathString.split(" ");
 
                 Calculator calculator = new Calculator();
-                calculator.calculate(Integer.parseInt(mathElemets[0]),Integer.parseInt(mathElemets[2]),
-                        mathElemets[1].charAt(0));
+                System.out.println("Результат вычисления равен: " + calculator.calculate(Integer.parseInt(mathElemets[0]),
+                        Integer.parseInt(mathElemets[2]), mathElemets[1].charAt(0)));
             }
-            
+
             System.out.println("Хотите продолжить вычисления? [yes/no]");
             answer = sc.nextLine();   
             if (!answer.equals("yes") && !answer.equals("no")) {
