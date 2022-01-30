@@ -24,9 +24,14 @@ public class GuessNumber {
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else if (answer < number) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
-            } else { 
+            } else {
                 System.out.println("Поздравляем! " + playerOne + " вы угадали.");
+                playerOne.addNumber(answer);
+                playerOne.printWinner();
                 break;
+            }
+            if (playerOne.addNumber(answer)) {
+                System.out.println("У " + playerOne + " закончились попытки");
             }
 
             System.out.print(playerTwo + " ваш вариант ответа: ");
@@ -35,10 +40,18 @@ public class GuessNumber {
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else if (answer < number) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
-            } else { 
+            } else {
                 System.out.println("Поздравляем! " + playerTwo + " вы угадали.");
+                playerTwo.addNumber(answer);
+                playerTwo.printWinner();
                 break;
-            }         
+            }
+            if (playerTwo.addNumber(answer)) {
+                System.out.println("У " + playerTwo + " закончились попытки");
+                break;
+            }
         }
+        playerOne.printInputs();
+        playerTwo.printInputs();
     }
 }
