@@ -5,37 +5,29 @@ import java.util.Arrays;
 public class Player {
 
     private String name;
-    private int[] inputs = new int[10];
-    private int counter;
+    private int[] enteredNumbers = new int[10];
 
     public Player(String name) {
         this.name = name;
-        setInputs();
     }
 
-    public void setInputs() {
-        Arrays.fill(inputs, 0, counter, 0);
-        counter = 0;
+    public void clearNumbers(int countAttempts) {
+        Arrays.fill(enteredNumbers, 0, countAttempts, 0);
+//        countAttempts = 0;
     }
 
-    public boolean addNumber(int number) {
-        inputs[counter] = number;
-        counter++;
-        if (counter < 10) {
-            return false;
-        } else {
-            return true;
-        }
+    public boolean addNumber(int number, int countAttempts) {
+        enteredNumbers[countAttempts] = number;
     }
 
-    public void printInputs() {
+    public void printInputs(int countAttempts) {
         System.out.print(name + " ");
-        System.out.println(Arrays.toString(Arrays.copyOf(inputs, counter)));
-        setInputs();
+        System.out.println(Arrays.toString(Arrays.copyOf(enteredNumbers, countAttempts)));
+        clearNumbers();
     }
 
-    public void printWinner() {
-        System.out.println("Игрок " + name + " угадал число " + inputs[counter - 1] + " с " + counter + " попытки");
+    public void printWinner(int countAttempts) {
+        System.out.println("Игрок " + name + " угадал число " + enteredNumbers[countAttempts - 1] + " с " + countAttempts + " попытки");
     }
 
     @Override

@@ -2,29 +2,22 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    private int result;
-
-    public int calculate(int firstNumber, int secondNumber, char mathOperation) {
-        switch(mathOperation) {
-            case '+': 
-                result = firstNumber + secondNumber;
-                break;
-            case '-': 
-                result = firstNumber - secondNumber;
-                break;
-            case '*': 
-                result = firstNumber * secondNumber;
-                break;
-            case '/': 
-                result = firstNumber / secondNumber;
-                break;
+    public int calculate(String mathString) {
+        String[] mathElemets = mathString.split(" ");
+        switch(mathElemets[1].charAt(0)) {
+            case '+':
+                return Integer.parseInt(mathElemets[0]) + Integer.parseInt(mathElemets[2]);
+            case '-':
+                return Integer.parseInt(mathElemets[0]) - Integer.parseInt(mathElemets[2]);
+            case '*':
+                return Integer.parseInt(mathElemets[0]) * Integer.parseInt(mathElemets[2]);
+            case '/':
+                return Integer.parseInt(mathElemets[0]) / Integer.parseInt(mathElemets[2]);
             case '^':
-                result = (int) Math.pow(firstNumber, secondNumber);
-                break;
-            case '%': 
-                result = firstNumber % secondNumber;
-                break;
+                return (int) Math.pow(Integer.parseInt(mathElemets[0]), Integer.parseInt(mathElemets[2]));
+            case '%':
+                return Integer.parseInt(mathElemets[0]) % Integer.parseInt(mathElemets[2]);
         }
-        return result;
+        return 0;
     }
 }

@@ -12,11 +12,9 @@ public class CalculatorTest {
             if (answer.equals("yes")) {
                 System.out.println("Введите математическое выражение: ");
                 String mathString = sc.nextLine();
-                String[] mathElemets = mathString.split(" ");
 
                 Calculator calculator = new Calculator();
-                System.out.println("Результат вычисления равен: " + calculator.calculate(Integer.parseInt(mathElemets[0]),
-                        Integer.parseInt(mathElemets[2]), mathElemets[1].charAt(0)));
+                System.out.println("Результат вычисления равен: " + calculator.calculate(mathString));
             }
 
             System.out.println("Хотите продолжить вычисления? [yes/no]");
