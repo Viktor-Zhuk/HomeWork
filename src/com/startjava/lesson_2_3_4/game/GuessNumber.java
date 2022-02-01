@@ -20,33 +20,33 @@ public class GuessNumber {
         while (true) {
             System.out.print(playerOne + " ваш вариант ответа: ");
             int answer = sc.nextInt();
+            playerOne.addNumber(answer);
             if (answer > number) {
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else if (answer < number) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
             } else {
                 System.out.println("Поздравляем! " + playerOne + " вы угадали.");
-                playerOne.addNumber(answer);
-                playerOne.printWinner();
+                System.out.println("Игрок " + playerOne + " угадал число " + answer + " с " + playerOne.countAttempts + " попытки");
                 break;
             }
-            if (playerOne.addNumber(answer)) {
+            if (playerOne.countAttempts == 10) {
                 System.out.println("У " + playerOne + " закончились попытки");
             }
 
             System.out.print(playerTwo + " ваш вариант ответа: ");
             answer = sc.nextInt();
+            playerTwo.addNumber(answer);
             if (answer > number) {
                 System.out.println("Данное число больше того, что загадал компьютер");
             } else if (answer < number) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
             } else {
                 System.out.println("Поздравляем! " + playerTwo + " вы угадали.");
-                playerTwo.addNumber(answer);
-                playerTwo.printWinner();
+                System.out.println("Игрок " + playerTwo + " угадал число " + answer + " с " + playerTwo.countAttempts + " попытки");
                 break;
             }
-            if (playerTwo.addNumber(answer)) {
+            if (playerTwo.countAttempts == 10) {
                 System.out.println("У " + playerTwo + " закончились попытки");
                 break;
             }

@@ -6,28 +6,26 @@ public class Player {
 
     private String name;
     private int[] enteredNumbers = new int[10];
+    int countAttempts = 0;
 
     public Player(String name) {
         this.name = name;
     }
 
-    public void clearNumbers(int countAttempts) {
+    public void clearNumbers() {
         Arrays.fill(enteredNumbers, 0, countAttempts, 0);
-//        countAttempts = 0;
+        countAttempts = 0;
     }
 
-    public boolean addNumber(int number, int countAttempts) {
+    public void addNumber(int number) {
         enteredNumbers[countAttempts] = number;
+        countAttempts++;
     }
 
-    public void printInputs(int countAttempts) {
+    public void printInputs() {
         System.out.print(name + " ");
         System.out.println(Arrays.toString(Arrays.copyOf(enteredNumbers, countAttempts)));
         clearNumbers();
-    }
-
-    public void printWinner(int countAttempts) {
-        System.out.println("Игрок " + name + " угадал число " + enteredNumbers[countAttempts - 1] + " с " + countAttempts + " попытки");
     }
 
     @Override
