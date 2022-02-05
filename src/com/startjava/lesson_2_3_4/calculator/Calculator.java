@@ -2,21 +2,23 @@ package com.startjava.lesson_2_3_4.calculator;
 
 public class Calculator {
 
-    public int calculate(String mathString) {
-        String[] mathElemets = mathString.split(" ");
+    public int calculate(String mathExpression) {
+        String[] mathElemets = mathExpression.split(" ");
+        int numberOne = Integer.parseInt(mathElemets[0]);
+        int numberTwo = Integer.parseInt(mathElemets[2]);
         switch(mathElemets[1].charAt(0)) {
             case '+':
-                return Integer.parseInt(mathElemets[0]) + Integer.parseInt(mathElemets[2]);
+                return numberOne + numberTwo;
             case '-':
-                return Integer.parseInt(mathElemets[0]) - Integer.parseInt(mathElemets[2]);
+                return numberOne - numberTwo;
             case '*':
-                return Integer.parseInt(mathElemets[0]) * Integer.parseInt(mathElemets[2]);
+                return numberOne * numberTwo;
             case '/':
-                return Integer.parseInt(mathElemets[0]) / Integer.parseInt(mathElemets[2]);
+                return numberOne / numberTwo;
             case '^':
-                return (int) Math.pow(Integer.parseInt(mathElemets[0]), Integer.parseInt(mathElemets[2]));
+                return (int) Math.pow(numberOne, numberTwo);
             case '%':
-                return Integer.parseInt(mathElemets[0]) % Integer.parseInt(mathElemets[2]);
+                return numberOne % numberTwo;
         }
         return 0;
     }

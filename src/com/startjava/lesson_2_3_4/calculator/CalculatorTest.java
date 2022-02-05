@@ -11,10 +11,10 @@ public class CalculatorTest {
         while (!answer.equals("no")) {
             if (answer.equals("yes")) {
                 System.out.println("Введите математическое выражение: ");
-                String mathString = sc.nextLine();
+                String mathExpression = sc.nextLine();
 
                 Calculator calculator = new Calculator();
-                System.out.println("Результат вычисления равен: " + calculator.calculate(mathString));
+                System.out.println("Результат вычисления равен: " + calculator.calculate(mathExpression));
             }
 
             System.out.println("Хотите продолжить вычисления? [yes/no]");

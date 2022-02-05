@@ -6,7 +6,7 @@ public class Player {
 
     private String name;
     private int[] enteredNumbers = new int[10];
-    int countAttempts = 0;
+    private int countAttempts;
 
     public Player(String name) {
         this.name = name;
@@ -22,10 +22,12 @@ public class Player {
         countAttempts++;
     }
 
-    public void printInputs() {
-        System.out.print(name + " ");
-        System.out.println(Arrays.toString(Arrays.copyOf(enteredNumbers, countAttempts)));
-        clearNumbers();
+    public int[] getArrayNumbers() {
+        return enteredNumbers;
+    }
+
+    public int getCountAttempts() {
+        return countAttempts;
     }
 
     @Override
