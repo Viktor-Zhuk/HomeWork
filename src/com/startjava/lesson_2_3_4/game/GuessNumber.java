@@ -20,38 +20,36 @@ public class GuessNumber {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
         int number = random.nextInt(100) + 1;
-        Player[] currentPlayer = {playerOne, playerTwo};
-        int i = 0;
-        while (true) {
-            System.out.print(currentPlayer[i] + " ваш вариант ответа: ");
-            int answer = sc.nextInt();
-            currentPlayer[i].addNumber(answer);
-            if (answer > number) {
+        Player[] playersInGame = {playerOne, playerTwo};
+        int i = 2;
+        while (playersInGame[1].getCountAttempts() < 10) {
+            int j = i % 2;
+            System.out.print(playersInGame[j] + " ваш вариант ответа: ");
+            int numberVariant = sc.nextInt();
+            playersInGame[j].addNumber(numberVariant);
+            if (numberVariant > number) {
                 System.out.println("Данное число больше того, что загадал компьютер");
-            } else if (answer < number) {
+            } else if (numberVariant < number) {
                 System.out.println("Данное число меньше того, что загадал компьютер");
             } else {
-                System.out.println("Поздравляем! " + currentPlayer[i] + " вы угадали.");
-                System.out.println("Игрок " + currentPlayer[i] + " угадал число " + answer + " с " +
-                        currentPlayer[i].getCountAttempts() + " попытки");
+                System.out.println("Поздравляем! " + playersInGame[j] + " вы угадали.");
+                System.out.println("Игрок " + playersInGame[j] + " угадал число " + numberVariant + " с " +
+                        playersInGame[j].getCountAttempts() + " попытки");
                 break;
             }
-            if (currentPlayer[i].getCountAttempts() == 10) {
-                System.out.println("У " + currentPlayer[i] + " закончились попытки");
-                if (i == 1) {
-                    break;
-                }
+            if (playersInGame[j].getCountAttempts() == 10) {
+                System.out.println("У " + playersInGame[j] + " закончились попытки");
             }
-            if (i == 0) {
-                i++;
-            } else {
-                i--;
-            }
+            i++;
         }
-        for (i = 0; i < currentPlayer.length; i++) {
-            System.out.print(currentPlayer[i] + " ");
-            System.out.println(Arrays.toString(Arrays.copyOf(currentPlayer[i].getArrayNumbers(), currentPlayer[i].getCountAttempts())));
-            currentPlayer[i].clearNumbers();
+        for (i = 0; i < playersInGame.length; i++) {
+            int[] enteredNumbers = playersInGame[i].getNumbers();
+            System.out.print(playersInGame[i] + " ");
+            for (int num : enteredNumbers) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+            playersInGame[i].clearNumbers();
         }
     }
 }

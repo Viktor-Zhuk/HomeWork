@@ -22,8 +22,8 @@ public class Player {
         countAttempts++;
     }
 
-    public int[] getArrayNumbers() {
-        return enteredNumbers;
+    public int[] getNumbers() {
+        return Arrays.copyOf(enteredNumbers, countAttempts);
     }
 
     public int getCountAttempts() {
