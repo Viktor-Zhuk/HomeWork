@@ -30,6 +30,10 @@ public class Player {
         return countAttempts;
     }
 
+    public int getLatestNumber() {
+        return enteredNumbers[countAttempts - 1];
+    }
+
     @Override
     public String toString() {
         return name;
