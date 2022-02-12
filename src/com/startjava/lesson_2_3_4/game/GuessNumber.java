@@ -39,13 +39,13 @@ public class GuessNumber {
     }
 
     private boolean checkNumber(Player player, int number) {
-        if (player.getLatestNumber() > number) {
+        if (player.getLastNumber() > number) {
             System.out.println("Данное число больше того, что загадал компьютер");
-        } else if (player.getLatestNumber() < number) {
+        } else if (player.getLastNumber() < number) {
             System.out.println("Данное число меньше того, что загадал компьютер");
         } else {
             System.out.println("Поздравляем! " + player + " вы угадали.");
-            System.out.println("Игрок " + player + " угадал число " + player.getLatestNumber() + " с " +
+            System.out.println("Игрок " + player + " угадал число " + player.getLastNumber() + " с " +
                     player.getCountAttempts() + " попытки");
             return true;
         }

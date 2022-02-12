@@ -30,7 +30,7 @@ public class Player {
         return countAttempts;
     }
 
-    public int getLatestNumber() {
+    public int getLastNumber() {
         return enteredNumbers[countAttempts - 1];
     }
 
